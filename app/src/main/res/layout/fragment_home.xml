@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Top Header Card -->
+        <RelativeLayout
+            android:id="@+id/header_gradient_bg"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@drawable/bg_gradient_student"
+            android:padding="20dp">
+
+            <!-- Top Right Action Container: Notification Bell & Profile Avatar -->
+            <LinearLayout
+                android:id="@+id/layout_top_actions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Notification Bell Button with Red Badge -->
+                <RelativeLayout
+                    android:id="@+id/btn_home_notification"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="8dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        app:cardCornerRadius="21dp"
+                        app:cardElevation="4dp"
+                        app:cardBackgroundColor="#20FFFFFF"
+                        app:strokeWidth="1.5dp"
+                        app:strokeColor="#FFFFFF">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="9dp"
+                            android:src="@drawable/ic_notification"
+                            app:tint="@color/white" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Unread Red Notification Badge Dot -->
+                    <View
+                        android:id="@+id/badge_unread_notice"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/bg_circle_red"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <!-- Circular Profile Avatar Button on Home Page -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/home_logout_btn"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#20FFFFFF"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="#FFFFFF">
+
+                    <ImageView
+                        android:id="@+id/img_home_avatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_profile" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- User Welcome Info -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_toStartOf="@id/layout_top_actions"
+                android:layout_marginEnd="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/welcome_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome to D Library"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/subtitle_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="DUET Central Digital Library"
+                    android:textColor="#E0E0E0"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_global_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_search"
+                        app:tint="#1A237E" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Search books, lecture sheets, course codes..."
+                        android:textColor="#757575"
+                        android:fontFamily="sans-serif"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+        <!-- Role Badge Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txt_dashboard_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Student Dashboard"
+                android:textColor="#1A237E"
+                android:textSize="18sp"
+                android:fontFamily="serif"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_pending_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#D32F2F"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:visibility="gone"
+                android:text="3 Pending" />
+        </LinearLayout>
+
+        <!-- Dashboard Actions Grid -->
+        <GridLayout
+            android:id="@+id/grid_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="true"
+            android:padding="12dp">
+
+            <!-- Card 1: Books -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_books"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="14dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/img_card1"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_book"
+                        app:tint="#1A237E" />
+                    <TextView
+                        android:id="@+id/lbl_card1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Digital Books"
+                        android:textColor="#212121"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 2: Lecture Sheets -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_lecture_sheets"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="14dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/img_card2"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_lecture"
+                        app:tint="#1A237E" />
+                    <TextView
+                        android:id="@+id/lbl_card2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Lecture Sheets"
+                        android:textColor="#212121"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 3: Lab Manuals -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_action3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="14dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/img_card3"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_lab"
+                        app:tint="#1A237E" />
+                    <TextView
+                        android:id="@+id/lbl_card3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Lab Manuals"
+                        android:textColor="#212121"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 4: Previous Exam Question Papers -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_action4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="14dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/img_card4"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_history"
+                        app:tint="#1A237E" />
+                    <TextView
+                        android:id="@+id/lbl_card4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Past Questions"
+                        android:textColor="#212121"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 5: Thesis Papers -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_action5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="14dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/img_card5"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_thesis"
+                        app:tint="#1A237E" />
+                    <TextView
+                        android:id="@+id/lbl_card5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Thesis Papers"
+                        android:textColor="#212121"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 6: E-Newspapers -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_action6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="14dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/img_card6"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_notice"
+                        app:tint="#1A237E" />
+                    <TextView
+                        android:id="@+id/lbl_card6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="E-Newspapers"
+                        android:textColor="#212121"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 7: PDF Reader -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_action7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="14dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/img_card7"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_book"
+                        app:tint="#1A237E" />
+                    <TextView
+                        android:id="@+id/lbl_card7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="PDF Reader"
+                        android:textColor="#212121"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 8: Notices & Library ID -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_action8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="14dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/img_card8"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_id_card"
+                        app:tint="#1A237E" />
+                    <TextView
+                        android:id="@+id/lbl_card8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Library ID"
+                        android:textColor="#212121"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </GridLayout>
+
+        <!-- Featured Books Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recently Added Books"
+                android:textColor="#212121"
+                android:fontFamily="serif"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_featured_books"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

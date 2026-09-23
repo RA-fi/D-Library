@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:id="@+id/splash_center_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- Big Transparent Logo Without White Background Box -->
+        <ImageView
+            android:id="@+id/splash_logo_card"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/dlibrary" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/splash_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="D LIBRARY"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:letterSpacing="0.08" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/splash_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="DUET Central Digital Library Portal"
+            android:textColor="#E0E0E0"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="14sp"
+            android:letterSpacing="0.04" />
+
+    </LinearLayout>
+
+    <!-- Bottom Footer & Loader -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginBottom="24dp">
+
+        <ProgressBar
+            android:id="@+id/splash_progress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/white"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/splash_footer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="v1.0 • Dhaka University of Engineering &amp; Technology"
+            android:textColor="#B0BEC5"
+            android:fontFamily="sans-serif"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

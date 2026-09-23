@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">D Library</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_librarian">Library</string>
+    <string name="title_profile">Profile</string>
+    <string name="welcome_text">Welcome to D Library</string>
+    <string name="subtitle_text">Access all your resources in one place</string>
+    <string name="module_theses">Theses</string>
+    <string name="module_database">A-Z Database</string>
+    <string name="module_ebooks">E-Books</string>
+    <string name="module_newspaper">Newspaper</string>
+    <string name="module_plagiarism">Plagiarism</string>
+    <string name="module_remote">Remote Access</string>
+    <string name="module_idcard">ID Card</string>
+    <string name="module_hours">Library Hours</string>
+    <string name="duet_library_full">Dhaka University of Engineering &amp; Technology Central Library</string>
+    <string name="duet_library_short">DUET Central Library</string>
+    <string name="gateway_text">Gateway to Knowledge</string>
+    <string name="login_title">Sign In</string>
+    <string name="register_title">Join DUET Library</string>
+    <string name="new_duetian">New DUETian? Create Account</string>
+    <string name="already_member">Already a member? Sign In</string>
+    <string name="login_welcome">Login to D Library</string>
+    <string name="select_role">Select Role</string>
+    <string name="role_student">Student</string>
+    <string name="role_librarian_short">Librarian</string>
+    <string name="role_admin">Admin</string>
+    <string name="management_label">Management</string>
+</resources>

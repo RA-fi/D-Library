@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_DOCUMENTS" />
+
+    <application
+        android:name=".DLibraryApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/dlibrary"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/dlibrary"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DLibrary">
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.DLibrary">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ThesisListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UniversityIdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EBooksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewspaperActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewspaperWebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminUserManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UploadResourceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResourceApprovalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageUploadsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResourceDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SubjectResourcesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NoticesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResourceListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DownloadLogsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PdfViewerActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

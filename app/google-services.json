@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "639878701116",
+    "firebase_url": "https://d-library-bf709-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "d-library-bf709",
+    "storage_bucket": "d-library-bf709.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639878701116:android:6a240f5675a9870ac7e339",
+        "android_client_info": {
+          "package_name": "com.example.dlibrary"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWj19_nqV_nwag8kgWmNAkpvfXEBwHje0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

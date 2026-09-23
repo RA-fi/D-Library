@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8F9FA">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#1A237E"
+        app:title="Digital Library ID Card"
+        app:titleTextColor="#FFFFFF"
+        app:navigationIconTint="#FFFFFF" />
+
+    <!-- Professional DUET Digital Library ID Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="10dp"
+        app:strokeColor="#FFC107"
+        app:strokeWidth="1.5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_gradient"
+            android:padding="16dp">
+
+            <!-- Top Header: Crest & Title -->
+            <ImageView
+                android:id="@+id/uni_logo"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:src="@drawable/ic_duet_logo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/uni_logo"
+                android:layout_toStartOf="@+id/id_role_badge"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="6dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DUET GAZIPUR"
+                    android:textColor="#FFC107"
+                    android:textSize="12sp"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CENTRAL DIGITAL LIBRARY"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/id_role_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:background="#FF8F00"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:text="STUDENT" />
+
+            <View
+                android:id="@+id/divider_header"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/uni_logo"
+                android:layout_marginVertical="12dp"
+                android:background="#40FFFFFF" />
+
+            <!-- Center Body: Circular User Photo & Info -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_user_photo"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_below="@id/divider_header"
+                android:layout_alignParentStart="true"
+                app:cardCornerRadius="38dp"
+                app:cardElevation="6dp"
+                app:strokeColor="#FFC107"
+                app:strokeWidth="2dp">
+
+                <ImageView
+                    android:id="@+id/user_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_profile" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider_header"
+                android:layout_toEndOf="@id/card_user_photo"
+                android:layout_marginStart="14dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/id_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MEMBER NAME"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17sp"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/id_user_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="ID: 1904001"
+                    android:textColor="#E0E0E0"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/id_user_dept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Dept: Computer Science"
+                    android:textColor="#E0E0E0"
+                    android:fontFamily="sans-serif"
+                    android:textSize="12sp"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/id_status_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Status: Active • Digital Verified"
+                    android:textColor="#81C784"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <!-- Bottom Footer: Barcode & Verification Tag -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="OFFICIAL DIGITAL PASS • GAZIPUR"
+                    android:textColor="#B0BEC5"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.05" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="║█║▌║█║▌│║▌║"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="monospace"
+                    android:textSize="14sp"
+                    android:letterSpacing="0.1" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:strokeColor="#E2E8F0"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dhaka University of Engineering &amp; Technology, Gazipur"
+                android:textColor="#1A237E"
+                android:fontFamily="serif"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Present this official digital library pass at the DUET Central Library entry desk or scan for book borrowing and e-resources access."
+                android:textColor="#666666"
+                android:fontFamily="sans-serif"
+                android:textSize="12sp"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
